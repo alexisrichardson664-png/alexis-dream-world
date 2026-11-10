@@ -1,17 +1,57 @@
 
-document.addEventListener('DOMContentLoaded', () => {
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  const navLinks = document.querySelectorAll('nav a');
+const outfitOptions = {
+    bow: ["🎀", "🌸", "💜", "🤍", "🦋"],
+    top: ["👚", "👗", "🩷", "💖", "👕"],
+    shoes: ["👠", "👢", "👟", "🥿", "👡"],
+    accessory: ["💎", "👜", "🧸", "🌷", "✨"]
+};
 
-  navLinks.forEach((link) => {
-    const href = link.getAttribute('href');
-    if (href === currentPage) {
-      link.classList.add('active');
+const startingOutfit = {
+    bow: "🎀",
+    top: "👗",
+    shoes: "👠",
+    accessory: "💎"
+};
+
+let currentOutfit = { ...startingOutfit };
+
+function chooseItem(category, item) {
+    currentOutfit[category] = item;
+    updateOutfit();
+}
+
+function updateOutfit() {
+    Object.keys(currentOutfit).forEach(category => {
+        const display = document.getElementById(category + "-display");
+
+        if (display) {
+            display.textContent = currentOutfit[category];
+        }
+    });
+}
+
+function randomizeOutfit() {
+    Object.keys(outfitOptions).forEach(category => {
+        const choices = outfitOptions[category];
+        const randomIndex = Math.floor(Math.random() * choices.length);
+
+        currentOutfit[category] = choices[randomIndex];
+    });
+
+    updateOutfit();
+}
+
+function resetOutfit() {
+    currentOutfit = { ...startingOutfit };
+    updateOutfit();
+}
+
+updateOutfit();
+
+function changeBow(filename) {
+    const bow = document.getElementById("melody-bow");
+
+    if (bow) {
+        bow.src = "images/" + filename;
     }
-  });
-
-  const footerYear = document.querySelector('[data-year]');
-  if (footerYear) {
-    footerYear.textContent = new Date().getFullYear();
-  }
-});
+}
