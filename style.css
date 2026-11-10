@@ -209,3 +209,271 @@ footer a {
     }
 }
 
+
+/* DRESS-UP PAGE */
+
+.dressup-page {
+    padding: 45px 7% 70px;
+}
+
+.page-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.page-heading h1 {
+    font-family: Georgia, serif;
+    color: #c45b91;
+    font-size: clamp(32px, 5vw, 48px);
+    margin: 15px 0;
+}
+
+.page-heading > p:last-child {
+    color: #a47791;
+}
+
+.dressup-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    max-width: 1100px;
+    margin: auto;
+    align-items: start;
+}
+
+.doll-panel,
+.closet-panel {
+    background: white;
+    border: 1px solid #f6d9e7;
+    border-radius: 24px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 8px 25px #dca5c51a;
+}
+
+.doll-panel h2,
+.closet-panel h2 {
+    font-family: Georgia, serif;
+    color: #b75c8c;
+}
+
+.doll-stage {
+    position: relative;
+    min-height: 340px;
+    padding: 25px 10px;
+    margin-top: 20px;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #ffe4f0, #f3eaff);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.doll-bow {
+    font-size: 48px;
+    margin-bottom: -5px;
+    z-index: 1;
+}
+
+.doll-face {
+    font-size: 95px;
+    line-height: 1.2;
+}
+
+.doll-outfit {
+    font-size: 75px;
+    margin-top: -5px;
+}
+
+.doll-details {
+    display: flex;
+    gap: 30px;
+    font-size: 34px;
+    margin-top: 8px;
+}
+
+.sparkle {
+    position: absolute;
+    color: #d46b9e;
+    font-size: 30px;
+}
+
+.sparkle-one {
+    top: 25px;
+    left: 25px;
+}
+
+.sparkle-two {
+    right: 25px;
+    bottom: 35px;
+}
+
+.look-caption {
+    color: #a47791;
+    font-style: italic;
+}
+
+.game-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.game-buttons .button,
+.reset-button {
+    font-family: inherit;
+    font-size: 13px;
+    border: none;
+    cursor: pointer;
+}
+
+.reset-button {
+    background: #f8e6f0;
+    color: #a44f7e;
+    padding: 15px 24px;
+    border-radius: 30px;
+    font-weight: 700;
+}
+
+.reset-button:hover {
+    background: #f2d1e3;
+}
+
+.closet-panel > p {
+    font-size: 14px;
+    color: #a47791;
+}
+
+.closet-category {
+    text-align: left;
+    border-top: 1px solid #f8e4ee;
+    padding: 15px 0;
+}
+
+.closet-category h3 {
+    font-size: 15px;
+    color: #a44f7e;
+}
+
+.item-options {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.item-button {
+    width: 55px;
+    height: 55px;
+    border: 1px solid #f3d1e2;
+    border-radius: 15px;
+    background: #fff7fb;
+    font-size: 27px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.item-button:hover {
+    background: #ffe4f0;
+    border-color: #d46b9e;
+    transform: translateY(-3px);
+}
+
+@media (max-width: 750px) {
+    .dressup-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .dressup-page {
+        padding: 30px 5% 50px;
+    }
+}
+
+
+/* MY MELODY DOLL AND BOW COLLECTION */
+
+.doll-stage {
+    position: relative;
+    min-height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: linear-gradient(145deg, #ffe4f0, #f3eaff);
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+.melody-body {
+    display: block;
+    max-width: 85%;
+    max-height: 340px;
+    object-fit: contain;
+    position: relative;
+    z-index: 1;
+}
+
+.melody-bow {
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+    top: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.bow-collection {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin: 25px 0;
+}
+
+.bow-choice {
+    background: #fff7fb;
+    border: 1px solid #f3d1e2;
+    border-radius: 16px;
+    padding: 12px;
+    cursor: pointer;
+    color: #a44f7e;
+    font-family: inherit;
+    font-weight: 700;
+    transition: 0.2s;
+}
+
+.bow-choice:hover {
+    border-color: #d46b9e;
+    background: #ffeaf4;
+    transform: translateY(-3px);
+}
+
+.bow-choice img {
+    display: block;
+    width: 100%;
+    height: 85px;
+    object-fit: contain;
+    margin-bottom: 8px;
+}
+
+.bow-choice span {
+    font-size: 12px;
+}
+
+.doll-panel .reset-button {
+    margin-top: 10px;
+}
+
+@media (max-width: 750px) {
+    .doll-stage {
+        min-height: 330px;
+    }
+
+    .melody-bow {
+        width: 65px;
+        height: 65px;
+    }
+}
