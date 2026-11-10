@@ -2,114 +2,223 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dress Up | Alexis's Dream World</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="js/script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dress Up | Alexis's Dream World</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff0f6;
+      color: #a34d76;
+      text-align: center;
+    }
+
+    header {
+      background: #ffc9df;
+      padding: 22px 12px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+    }
+
+    nav a {
+      color: #a34d76;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+    }
+
+    main {
+      padding: 24px 12px;
+    }
+
+    .game {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 25px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .doll-area {
+      position: relative;
+      width: 280px;
+      height: 380px;
+      background: white;
+      border: 3px solid #ffc9df;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .doll-area img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    #body {
+      z-index: 1;
+    }
+
+    #bow {
+  z-index: 2;
+  pointer-events: none;
+  width: 35%;
+  height: 35%;
+  left: 32.5%;
+  top: 5%;
+  object-fit: contain;
+    }
+    
+
+    .choices {
+      width: min(100%, 380px);
+      background: white;
+      border: 2px solid #ffc9df;
+      border-radius: 20px;
+      padding: 18px;
+    }
+
+    .items {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .item {
+      width: 105px;
+      min-height: 110px;
+      padding: 8px;
+      border: 2px solid #ffd5e6;
+      border-radius: 12px;
+      background: #fff5fa;
+      color: #a34d76;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    .item:hover {
+      background: #ffe1ed;
+      border-color: #e98ab5;
+    }
+
+    .item img {
+      width: 75px;
+      height: 70px;
+      object-fit: contain;
+      display: block;
+      margin: auto auto 5px;
+    }
+
+    .reset {
+      margin-top: 20px;
+      border: none;
+      border-radius: 20px;
+      background: #f3a5c7;
+      color: white;
+      padding: 12px 22px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    .reset:hover {
+      background: #e98ab5;
+    }
+
+    footer {
+      padding: 25px;
+    }
+  </style>
 </head>
+
 <body>
-    <header class="header">
-        <a href="index.html" class="logo">Alexis's Dream World 🎀</a>
+  <header>
+    <h1>🎀 Alexis's Dream World 🎀</h1>
 
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="dress-up.html">Dress-Up</a>
-            <a href="inspiration.html">Inspiration</a>
-        </nav>
-    </header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="dress-up.html">Dress Up</a>
+      <a href="inspiration.html">Inspiration</a>
+    </nav>
+  </header>
 
-    <main class="page-main">
-        <section class="page-heading">
-            <p class="eyebrow">♡ YOUR STYLE, YOUR RULES ♡</p>
-            <h1>The Dream <span>Closet</span></h1>
-            <p>Create an outfit that matches your imagination!</p>
-        </section>
+  <main>
+    <h2>My Little Bow Room ♡</h2>
+    <p>Pick a cute bow for your doll!</p>
 
-        <section class="dress-up-layout">
-            <div class="doll-panel">
-                <p class="panel-label">✧ YOUR DREAM LOOK ✧</p>
+    <div class="game">
 
-                <div class="doll-stage" id="doll-stage">
-                    <div class="doll-sparkle sparkle-a">✦</div>
-                    <div class="doll-sparkle sparkle-b">♡</div>
-                    <div class="doll-sparkle sparkle-c">✧</div>
+      <div class="doll-area">
+        <img
+          id="body"
+          src="images/mymelodybody.PNG"
+          alt="My Melody doll"
+        >
 
-                    <div class="doll">
-                        <div class="doll-hair" id="doll-hair">💇🏻‍♀️</div>
-                        <div class="doll-face">☺️</div>
-                        <div class="doll-outfit" id="doll-outfit">👗</div>
-                        <div class="doll-shoes" id="doll-shoes">👠</div>
-                        <div class="doll-accessory" id="doll-accessory">🎀</div>
-                    </div>
-                </div>
+        <img id="bow" src="" alt="">
+      </div>
 
-                <p class="look-caption" id="look-caption">Your dream look starts here ♡</p>
-            </div>
+      <section class="choices">
+        <h2>🎀 Choose a Bow 🎀</h2>
 
-            <div class="closet-panel">
-                <h2>Style your doll ♡</h2>
-                <p class="closet-instructions">Choose something from each category.</p>
+        <div class="items">
 
-                <div class="choice-group">
-                    <h3>♡ Hair</h3>
-                    <div class="choice-buttons">
-                        <button class="choice" data-category="hair" data-value="💇🏻‍♀️" data-name="Classic Hair">Classic</button>
-                        <button class="choice" data-category="hair" data-value="👩🏻‍🦰" data-name="Ginger Hair">Ginger</button>
-                        <button class="choice" data-category="hair" data-value="👩🏻‍🦱" data-name="Curly Hair">Curly</button>
-                        <button class="choice" data-category="hair" data-value="👱🏻‍♀️" data-name="Blonde Hair">Blonde</button>
-                    </div>
-                </div>
+          <button class="item" onclick="chooseBow('aibow.PNG')">
+            <img src="images/aibow.PNG" alt="AI bow">
+            AI Bow
+          </button>
 
-                <div class="choice-group">
-                    <h3>♡ Outfit</h3>
-                    <div class="choice-buttons">
-                        <button class="choice" data-category="outfit" data-value="👗" data-name="Princess Dress">Dress</button>
-                        <button class="choice" data-category="outfit" data-value="👚" data-name="Cute Top">Top</button>
-                        <button class="choice" data-category="outfit" data-value="👘" data-name="Elegant Outfit">Elegant</button>
-                        <button class="choice" data-category="outfit" data-value="🥻" data-name="Dreamy Look">Dreamy</button>
-                    </div>
-                </div>
+          <button class="item" onclick="chooseBow('flowybow.PNG')">
+            <img src="images/flowybow.PNG" alt="Flowy bow">
+            Flowy Bow
+          </button>
 
-                <div class="choice-group">
-                    <h3>♡ Shoes</h3>
-                    <div class="choice-buttons">
-                        <button class="choice" data-category="shoes" data-value="👠" data-name="Heels">Heels</button>
-                        <button class="choice" data-category="shoes" data-value="👟" data-name="Sneakers">Sneakers</button>
-                        <button class="choice" data-category="shoes" data-value="🩰" data-name="Ballet Flats">Ballet</button>
-                        <button class="choice" data-category="shoes" data-value="👢" data-name="Boots">Boots</button>
-                    </div>
-                </div>
+          <button class="item" onclick="chooseBow('hellokittybow.PNG')">
+            <img src="images/hellokittybow.PNG" alt="Hello Kitty bow">
+            Kitty Bow
+          </button>
 
-                <div class="choice-group">
-                    <h3>♡ Accessories</h3>
-                    <div class="choice-buttons">
-                        <button class="choice" data-category="accessory" data-value="🎀" data-name="Bow">Bow</button>
-                        <button class="choice" data-category="accessory" data-value="👑" data-name="Crown">Crown</button>
-                        <button class="choice" data-category="accessory" data-value="🦋" data-name="Butterfly">Butterfly</button>
-                        <button class="choice" data-category="accessory" data-value="💖" data-name="Heart">Heart</button>
-                    </div>
-                </div>
+          <button class="item" onclick="chooseBow('pinkbow.PNG')">
+            <img src="images/pinkbow.PNG" alt="Pink bow">
+            Pink Bow
+          </button>
 
-                <div class="game-actions">
-                    <button class="button" id="random-outfit">Surprise Me ✨</button>
-                    <button class="button button-secondary" id="reset-outfit">Start Over ↻</button>
-                </div>
-
-                <p class="game-message" id="game-message" aria-live="polite">Your closet, your rules!</p>
-            </div>
-        </section>
-
-        <div class="back-link">
-            <a href="index.html">← Back to the Dream World</a>
         </div>
-    </main>
 
-    <footer class="site-footer">
-        <a class="footer-logo" href="index.html">Alexis's Dream World ♡</a>
-        <p>Made with love and a little sparkle.</p>
-        <a href="mailto:alexisrichardson664@gmail.com">Contact Alexis</a>
-        <p class="copyright">© 2026 Alexis's Dream World</p>
-    </footer>
+        <button class="reset" onclick="resetDoll()">
+          Reset Bow ♡
+        </button>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    Made with love ♡ Alexis's Dream World
+  </footer>
+
+  <script>
+    function chooseBow(filename) {
+      document.getElementById("bow").src = "images/" + filename;
+    }
+
+    function resetDoll() {
+      document.getElementById("bow").removeAttribute("src");
+    }
+  </script>
 </body>
 </html>
