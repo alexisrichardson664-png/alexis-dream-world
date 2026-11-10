@@ -2,123 +2,256 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inspiration | Alexis's Dream World</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="js/script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inspiration | Alexis's Dream World</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff0f6;
+      color: #a34d76;
+    }
+
+    header {
+      background: #ffc9df;
+      padding: 25px 12px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 0 12px;
+    }
+
+    nav a {
+      color: #a34d76;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 10px;
+    }
+
+    nav a:hover {
+      color: #ffffff;
+    }
+
+    .intro {
+      text-align: center;
+      padding: 30px 15px 15px;
+    }
+
+    .intro h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .intro p {
+      line-height: 1.7;
+      max-width: 650px;
+      margin: auto;
+    }
+
+    .gallery {
+      max-width: 1050px;
+      margin: 25px auto 45px;
+      padding: 0 18px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 22px;
+    }
+
+    .picture-card {
+      background: white;
+      padding: 12px;
+      border: 2px solid #ffd1e3;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(201, 112, 153, 0.10);
+      transition: transform 0.2s;
+    }
+
+    .picture-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .picture-card img {
+      width: 100%;
+      height: 230px;
+      object-fit: contain;
+      border-radius: 12px;
+      background: #fff7fb;
+    }
+
+    .picture-card h3 {
+      margin: 12px 0 5px;
+      font-size: 17px;
+    }
+
+    .map-section {
+      background: #ffe0ed;
+      text-align: center;
+      padding: 35px 18px;
+    }
+
+    .map-section p {
+      line-height: 1.7;
+      max-width: 650px;
+      margin: 10px auto 20px;
+    }
+
+    .map-frame {
+      width: 100%;
+      max-width: 850px;
+      height: 350px;
+      border: 3px solid white;
+      border-radius: 18px;
+    }
+
+    .map-link {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 22px;
+      background: #e98ab5;
+      color: white;
+      text-decoration: none;
+      border-radius: 22px;
+      font-weight: bold;
+    }
+
+    .map-link:hover {
+      background: #d96c9d;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 12px;
+      background: #ffc9df;
+    }
+
+    @media (max-width: 500px) {
+      .gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        padding: 0 12px;
+      }
+
+      .picture-card img {
+        height: 160px;
+      }
+
+      nav a {
+        margin: 0 5px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <header class="header">
-        <a href="index.html" class="logo">Alexis's Dream World 🎀</a>
 
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="dress-up.html">Dress-Up</a>
-            <a href="inspiration.html">Inspiration</a>
-        </nav>
-    </header>
+  <header>
+    <h1>🎀 Alexis's Dream World 🎀</h1>
 
-    <main class="page-main">
-        <section class="page-heading">
-            <p class="eyebrow">♡ COLLECT YOUR LITTLE SPARKS ♡</p>
-            <h1>A Little <span>Inspiration</span></h1>
-            <p>A dreamy collection of colors, creativity, and reminders to be yourself.</p>
-        </section>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="dress-up.html">Dress Up</a>
+      <a href="inspiration.html">Inspiration</a>
+    </nav>
+  </header>
 
-        <section class="mood-board">
-            <article class="mood-tile mood-pink">
-                <span class="mood-symbol">♡</span>
-                <h2>Romanticize the little things</h2>
-                <p>Find magic in ordinary moments.</p>
-            </article>
+  <section class="intro">
+    <h2>My Inspiration Gallery ♡</h2>
 
-            <article class="mood-tile mood-purple">
-                <span class="mood-symbol">☾</span>
-                <h2>Dream without limits</h2>
-                <p>Let your imagination take the lead.</p>
-            </article>
+    <p>
+      Welcome to my little dreamy world!
+      Explore my favorite Sanrio characters and find
+      inspiration for all things cute, pink, and kawaii. 🎀
+    </p>
+  </section>
 
-            <article class="mood-tile mood-peach">
-                <span class="mood-symbol">✿</span>
-                <h2>Grow at your own pace</h2>
-                <p>You don't have to bloom all at once.</p>
-            </article>
+  <section class="gallery">
 
-            <article class="mood-tile mood-white">
-                <span class="mood-symbol">✧</span>
-                <h2>Make it your own</h2>
-                <p>Your creativity has its own kind of magic.</p>
-            </article>
-        </section>
+    <div class="picture-card">
+      <img src="images/chococat.JPG" alt="Chococat">
+      <h3>Chococat 🖤</h3>
+    </div>
 
-        <section class="palette-section">
-            <p class="eyebrow">THE DREAM WORLD PALETTE</p>
-            <h2>Colors that feel like a daydream</h2>
+    <div class="picture-card">
+      <img src="images/cinnamonroll.JPG" alt="Cinnamoroll">
+      <h3>Cinnamoroll ☁️</h3>
+    </div>
 
-            <div class="palette">
-                <div class="swatch">
-                    <div class="swatch-color swatch-baby-pink"></div>
-                    <p>Baby Pink</p>
-                    <span>#FADADD</span>
-                </div>
-                <div class="swatch">
-                    <div class="swatch-color swatch-blush"></div>
-                    <p>Blush</p>
-                    <span>#F4AFC5</span>
-                </div>
-                <div class="swatch">
-                    <div class="swatch-color swatch-purple"></div>
-                    <p>Lavender</p>
-                    <span>#DCC6F2</span>
-                </div>
-                <div class="swatch">
-                    <div class="swatch-color swatch-cream"></div>
-                    <p>Dream White</p>
-                    <span>#FFF9FC</span>
-                </div>
-                <div class="swatch">
-                    <div class="swatch-color swatch-rose"></div>
-                    <p>Rose Pink</p>
-                    <span>#D96C9D</span>
-                </div>
-            </div>
-        </section>
+    <div class="picture-card">
+      <img src="images/coco.JPG" alt="Coco">
+      <h3>Coco ♡</h3>
+    </div>
 
-        <section class="prompt-section">
-            <p class="eyebrow">A LITTLE CREATIVE CHALLENGE</p>
-            <h2>Your imagination starts here ♡</h2>
-            <p>Need an idea? Generate a little prompt and see where it takes you.</p>
+    <div class="picture-card">
+      <img src="images/keroppi.JPG" alt="Keroppi">
+      <h3>Keroppi 🐸</h3>
+    </div>
 
-            <div class="prompt-card">
-                <p id="creative-prompt" aria-live="polite">
-                    Create something inspired by your favorite dream.
-                </p>
-                <button class="button" id="new-prompt">Give Me an Idea ✨</button>
-            </div>
-        </section>
+    <div class="picture-card">
+      <img src="images/Kuromi.JPG" alt="Kuromi">
+      <h3>Kuromi 💜</h3>
+    </div>
 
-        <section class="dream-note" id="dream-note">
-            <div class="note-sparkle">✧ ♡ ✧</div>
-            <h2>A note to your dream self</h2>
-            <p>
-                You are allowed to grow, change your mind, try new things,
-                and become whoever you dream of being. Your journey doesn't
-                have to look like anyone else's.
-            </p>
-            <p class="note-signature">With love, Alexis's Dream World ♡</p>
-        </section>
+    <div class="picture-card">
+      <img src="images/mymelody.JPG" alt="My Melody">
+      <h3>My Melody 🎀</h3>
+    </div>
 
-        <div class="back-link">
-            <a href="index.html">← Back to the Dream World</a>
-        </div>
-    </main>
+    <div class="picture-card">
+      <img src="images/pompom.JPG" alt="Pompompurin">
+      <h3>Pompompurin 🍮</h3>
+    </div>
 
-    <footer class="site-footer">
-        <a class="footer-logo" href="index.html">Alexis's Dream World ♡</a>
-        <p>Made with love, imagination, and a little sparkle.</p>
-        <a href="mailto:alexisrichardson664@gmail.com">Contact Alexis</a>
-        <p class="copyright">© 2026 Alexis's Dream World</p>
-    </footer>
+    <div class="picture-card">
+      <img src="images/sanrio1.JPG" alt="Sanrio inspiration picture one">
+      <h3>Sanrio Dreams 🌸</h3>
+    </div>
+
+    <div class="picture-card">
+      <img src="images/sanrio2.JPG" alt="Sanrio inspiration picture two">
+      <h3>Sweet Sanrio World 💗</h3>
+    </div>
+
+  </section>
+
+  <section class="map-section">
+    <h2>📍 Explore the Sanrio World!</h2>
+
+    <p>
+      Take a little virtual trip to Sanrio Puroland,
+      a Sanrio-themed indoor amusement park in Japan.
+      Explore the location using the map below! ♡
+    </p>
+
+    <iframe
+      class="map-frame"
+      src="https://maps.google.com/maps?q=Sanrio%20Puroland%2C%20Tokyo%2C%20Japan&output=embed"
+      loading="lazy"
+      title="Map showing Sanrio Puroland in Japan">
+    </iframe>
+
+    <br>
+
+    <a
+      class="map-link"
+      href="https://www.google.com/maps/search/?api=1&query=Sanrio+Puroland+Tokyo+Japan"
+      target="_blank"
+      rel="noopener noreferrer">
+      Explore the Map ♡
+    </a>
+  </section>
+
+  <footer>
+    Made with love ♡ Alexis's Dream World
+  </footer>
+
 </body>
 </html>
+
